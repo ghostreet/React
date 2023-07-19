@@ -1,18 +1,23 @@
-import { BsJustify } from "react-icons/bs";
 import CartWidget from "../CartWidget/CartWidget";
+import { NavLink } from "react-router-dom";
 import "./NavBar.css";
 
-const NavBar = () => {
+
+function NavBar () {
     return (
+        <header className="flex justify.between">
+             <h3 className="titulo">XTech</h3>    
         <nav>
-            <div className="navbar">
-            <h3 className="titulo">XTech</h3>
-            <button>Telefonía</button>
-            <button>Electronica</button>
-            <button>Computación</button>
-            </div>
-           <CartWidget/>
+        
+            <NavLink to="/">Home</NavLink>   
+            <NavLink to="/categoria/telefonia">Telefonía</NavLink> 
+            <NavLink to="/categoria/electronica">Electronica</NavLink> 
+            <NavLink to="/categoria/computacion">Computación</NavLink>       
+            <NavLink to="/carrito">
+                <CartWidget/> 
+            </NavLink>   
         </nav>
+        </header>
     )
 };
 

@@ -1,11 +1,10 @@
-import {BsCartPlusFill} from "react-icons/bs";
+import {BsCartFill} from "react-icons/bs";
 import "./CartWidget.css";
 
 const CartWidget = () => {
     return (
         <div className="cart">
-            <BsCartPlusFill size={40} />
-            0
+            <BsCartFill size={30} />  
         </div>
     )
 }

@@ -1,9 +1,24 @@
+import { useEffect, useState } from "react";
+import ItemList from "../ItemList/ItemList";
+import pedirProductos from "../pedirProductos";
 import "./ItemListContainer.css";
 
-const ItemListContainer = ({ greeting }) => {
+
+const ItemListContainer = ({}) => {
+
+    const [productos, setProductos] = useState([]);
+
+    useEffect(()=>{
+        pedirProductos()
+            .then((res) =>{
+                setProductos(res);
+        })
+    }, [])
+   
+
     return (
-        <div className="saludo">
-            <h2>{greeting}</h2>
+        <div>
+           <ItemList productos={productos}/>
         </div>
     )
 }
