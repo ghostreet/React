@@ -13,7 +13,10 @@ const ItemListContainer = ({}) => {
             .then((res) =>{
                 setProductos(res);
         })
-    }, [])
+            .catch(error =>{
+                console.error(error)
+            })
+    },[])
    
 
     return (

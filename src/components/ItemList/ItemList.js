@@ -1,21 +1,20 @@
 
 import React from 'react'
-import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
+import Item from '../Item/Item';
 
 const ItemList = ( {productos} )=> {
      return (
       <div>
         <h1>Productos</h1>
-          {   
-              productos.lenght > 0 && 
+        <div>
+        { productos.length > 0 && 
               productos.map((producto)=> {
-                  return (
-                     <ItemDetailContainer key={producto.id} producto={producto}/>
-                          )
+                  return <Item key={producto.id} producto={producto}/>                       
               })
-          }
+        }
+        </div>     
       </div>
-  )
+  );
 };
 
 export default ItemList

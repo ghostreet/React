@@ -1,14 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import pedirProductos from '../pedirProductos'
+import ItemDetail from '../ItemDetail/ItemDetail'
 
-const ItemDetailContainer = ( {producto} ) =>{
+const ItemDetailContainer = ()=> {
+  const [producto, setProducto] =useState(null)
+
+  useEffect(()=> {
+    pedirProductos()
+      .then(response => {
+        setProducto(response)
+      })
+      .catch(error => {
+        console.error(error)
+      })
+  }, [])
   return (
-      <div>
-          <img src={producto.img} alt={producto.file_name} />
-          <h2>{producto.file_name}</h2>
-          <p>{producto.id}</p>
-          <p>{producto.version}</p>
-          <p>{producto.url}</p>         
-      </div>
+    <div className="ItemDetailContainer">
+      <ItemDetail {...producto}/>
+    </div>
   )
 }
 

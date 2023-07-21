@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import "./NavBar.css";
 
 
-function NavBar () {
+const NavBar = ()=> {
     return (
         <header className="flex justify.between">
              <h3 className="titulo">XTech</h3>    
